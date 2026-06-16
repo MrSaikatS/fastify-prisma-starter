@@ -18,5 +18,6 @@
     "outDir": "build", // compiled JS lands here
     "sourceMap": false // no sourcemaps in build output
   },
-  "include": ["src/**/*.ts"] // only compile source files
+  "include": ["src/**/*.ts"], // only compile source files
+  "exclude": ["node_modules"]
 }

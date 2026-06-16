@@ -9,13 +9,16 @@ const __dirname = dirname(__filename);
 const fastify = Fastify({
   logger:
     process.env.NODE_ENV === "production" ?
-      true
+      {
+        transport: {
+          target: "@fastify/one-line-logger",
+        },
+      }
     : {
         transport: {
           target: "pino-pretty",
           options: {
-            translateTime: "HH:MM:ss Z",
-            ignore: "pid,hostname",
+            translateTime: "SYS:dd-mm-yyyy - hh:MM:ss TT",
           },
         },
       },
