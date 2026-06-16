@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     /* ——————————————————————— Module & Resolution ——————————————————————— */
-    "module": "ESNext", // ESM output; the project is "type": "module"
-    "moduleResolution": "bundler", // resolves imports like bundlers (no extension lookups needed)
+    "module": "Node16", // ESM output with node16 resolution
+    "moduleResolution": "node16", // requires .js extensions in ESM imports
     "resolveJsonModule": true, // allows importing .json files
     "target": "ES2023", // downlevel to this JS version
 

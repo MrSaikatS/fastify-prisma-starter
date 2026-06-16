@@ -1,7 +1,8 @@
 import { PrismaLibSql } from "@prisma/adapter-libsql";
 import { FastifyPluginAsync } from "fastify";
 import fp from "fastify-plugin";
-import { PrismaClient } from "../generated/prisma/client";
+import { PrismaClient } from "../generated/prisma/client.js";
+import { env } from "../utils/env.js";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -11,7 +12,7 @@ declare module "fastify" {
 
 const prisma: FastifyPluginAsync = fp(async (fastify) => {
   const adapter = new PrismaLibSql({
-    url: process.env.DATABASE_URL as string,
+    url: env().DATABASE_URL,
   });
 
   const prisma = new PrismaClient({
